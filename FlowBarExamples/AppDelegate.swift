@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         
-        flowStyle = "test"
+        flowStyle = "rainstick"
         
         return true
     }

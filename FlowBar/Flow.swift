@@ -52,7 +52,7 @@ public final class Flow: NSObject {
     }
     
     public enum FlowStyles: String {
-        case test = "test"
+        case rainstick = "rainstick"
     }
     
     let gravity = UIGravityBehavior()
@@ -87,7 +87,7 @@ public final class Flow: NSObject {
     func perfromFlowAnimation() {
         if let animation = FlowStyles(rawValue: flowStyle) {
             switch animation {
-            case .test:
+            case .rainstick:
             
                 configureDynamics()
                 
