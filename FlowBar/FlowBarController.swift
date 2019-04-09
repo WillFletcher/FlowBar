@@ -11,10 +11,6 @@ import CoreMotion
 
 public class FlowBarController: UITabBarController, Flowable {
     
-    public var animator = UIDynamicAnimator()
-    public var gravity = UIGravityBehavior()
-    public var collision = UICollisionBehavior()
-    
     public var firstTab: UIView?
     public var secondTab: UIView?
     public var thirdTab: UIView?

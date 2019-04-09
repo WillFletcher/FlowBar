@@ -14,11 +14,6 @@ public var flowStyle = ""
 
 @objc public protocol Flowable {
     
-    // UIKitDynamics properties
-    var animator: UIDynamicAnimator { get set }
-    var gravity: UIGravityBehavior { get set }
-    var collision: UICollisionBehavior { get set }
-    
     // Tabbar tabs and tabbar
     var firstTab: UIView! { get set }
     var secondTab: UIView! { get set }
