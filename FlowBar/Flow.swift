@@ -8,10 +8,11 @@
 
 import Foundation
 import UIKit
+import CoreMotion
+
+public var flowStyle = ""
 
 @objc public protocol Flowable {
-    
-    var flowStyle: String { get set }
     
     // UIKitDynamics properties
     var animator: UIDynamicAnimator { get set }
@@ -37,15 +38,6 @@ public final class Flow: NSObject {
         super.init()
     }
     
-    private var animation: String {
-        set {
-            self.flowBarController.flowStyle = newValue
-        }
-        get {
-            return self.flowBarController.flowStyle
-        }
-    }
-    
     private var firstTab: UIView {
         set {
             self.flowBarController.firstTab = newValue
@@ -55,29 +47,65 @@ public final class Flow: NSObject {
         }
     }
     
+    private var secondTab: UIView {
+        set {
+            self.flowBarController.secondTab = newValue
+        }
+        get {
+            return self.flowBarController.secondTab
+        }
+    }
+    
     public enum FlowStyles: String {
         case test = "test"
     }
     
-    var gravity: UIGravityBehavior!
+    let gravity = UIGravityBehavior()
     var collision: UICollisionBehavior!
     var animator: UIDynamicAnimator!
     
+    func gravityUpdated(motion: CMDeviceMotion!, error: Error!) {
+        DispatchQueue.main.async {
+            if error != nil {
+                print("error: \(error!)")
+            }
+            
+            let grav = motion.gravity
+            
+            let x = CGFloat(grav.x)
+            let y = CGFloat(grav.y)
+            let p = CGPoint(x: x, y: y)
+            
+            let v = CGVector(dx: p.x, dy: 0 - p.y)
+            self.gravity.gravityDirection = v
+        }
+    }
+    
+    func configureDynamics() {
+        animator = UIDynamicAnimator(referenceView: flowBarController.bar)
+        animator.addBehavior(gravity)
+        gravity.addItem(firstTab)
+        gravity.addItem(secondTab)
+    }
+    
     // MARK: Flow animations
     func perfromFlowAnimation() {
-        if let animation = FlowStyles(rawValue: animation) {
+        if let animation = FlowStyles(rawValue: flowStyle) {
             switch animation {
             case .test:
+            
+                configureDynamics()
                 
-                animator = UIDynamicAnimator(referenceView: flowBarController.bar)
-                gravity = UIGravityBehavior(items: [firstTab])
-                animator.addBehavior(gravity)
+                let itemBehavior = UIDynamicItemBehavior(items: [firstTab, secondTab])
+                itemBehavior.elasticity = 0.7
+                animator.addBehavior(itemBehavior)
                 
-                print("enabled test animation")
+                collision = UICollisionBehavior(items: [firstTab, secondTab])
+                collision.translatesReferenceBoundsIntoBoundary = true
+                animator.addBehavior(collision)
             }
         }
     }
 }
-
 
 

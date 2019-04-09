@@ -7,10 +7,9 @@
 //
 
 import UIKit
+import CoreMotion
 
 public class FlowBarController: UITabBarController, Flowable {
-    
-    public var flowStyle = ""
     
     public var animator = UIDynamicAnimator()
     public var gravity = UIGravityBehavior()
@@ -25,16 +24,28 @@ public class FlowBarController: UITabBarController, Flowable {
     
     lazy public var flow: Flow = Flow(self)
     
+    // Used for getting device motion updates
+    let motionQueue = OperationQueue()
+    let motionManager = CMMotionManager()
+
     override open func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         bar = self.tabBar
-        
+
+        tabBar.subviews[0].tintColor = .yellow
+        tabBar.subviews[1].tintColor = .black
+        tabBar.itemPositioning = .centered
     }
     
     override public func viewDidAppear(_ animated: Bool) {
         configureTabs()
         animate()
+        motionManager.startDeviceMotionUpdates(to: motionQueue, withHandler: flow.gravityUpdated(motion:error:))
+    }
+    
+    public override func viewDidDisappear(_ animated: Bool) {
+        motionManager.stopDeviceMotionUpdates()
     }
     
     func configureTabs() {
@@ -68,13 +79,8 @@ public class FlowBarController: UITabBarController, Flowable {
         default: break
         }
     }
-    
-    func configureDynamics() {
-        animator = UIDynamicAnimator(referenceView: self.tabBar)
-    }
-    
+        
     public func animate() {
-        self.flowStyle = "test"
         self.flow.perfromFlowAnimation()
     }
 }
