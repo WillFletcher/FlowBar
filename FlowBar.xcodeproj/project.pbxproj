@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B29AC1C225B2FF1008878C2 /* FlowBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE5AE742250BD10000C0302 /* FlowBarController.swift */; };
+		1BB3796C225A0A9000307174 /* Star.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1BB3796B225A0A8F00307174 /* Star.pdf */; };
+		1BE312C1225C9B190050E71A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF9E747224B1EB500D54DBD /* AppDelegate.swift */; };
 		1BE5AE71224F9366000C0302 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE5AE70224F9366000C0302 /* Flow.swift */; };
 		1BE5AE73224F9522000C0302 /* FlowBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE5AE72224F9522000C0302 /* FlowBar.swift */; };
-		1BE5AE752250BD10000C0302 /* FlowBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE5AE742250BD10000C0302 /* FlowBarController.swift */; };
 		1BE5AE762251AB53000C0302 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF9E749224B1EB500D54DBD /* ViewController.swift */; };
 		1BE5AE772251C10E000C0302 /* FlowBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF9E727224B1DB800D54DBD /* FlowBar.framework */; };
 		1BE5AE782251C10E000C0302 /* FlowBar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF9E727224B1DB800D54DBD /* FlowBar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -56,6 +58,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1BB3796B225A0A8F00307174 /* Star.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Star.pdf; sourceTree = "<group>"; };
 		1BE5AE70224F9366000C0302 /* Flow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
 		1BE5AE72224F9522000C0302 /* FlowBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowBar.swift; sourceTree = "<group>"; };
 		1BE5AE742250BD10000C0302 /* FlowBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowBarController.swift; sourceTree = "<group>"; };
@@ -164,6 +167,7 @@
 				1BF9E74B224B1EB500D54DBD /* Main.storyboard */,
 				1BF9E74E224B1EB800D54DBD /* Assets.xcassets */,
 				1BE5AE7C2251E32E000C0302 /* More Filled.png */,
+				1BB3796B225A0A8F00307174 /* Star.pdf */,
 				1BF9E750224B1EB800D54DBD /* LaunchScreen.storyboard */,
 				1BF9E753224B1EB800D54DBD /* Info.plist */,
 			);
@@ -331,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BB3796C225A0A9000307174 /* Star.pdf in Resources */,
 				1BF9E784224B1F2F00D54DBD /* LaunchScreen.storyboard in Resources */,
 				1BE5AE7D2251E32E000C0302 /* More Filled.png in Resources */,
 				1BF9E781224B1F2F00D54DBD /* Assets.xcassets in Resources */,
@@ -345,10 +350,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BE5AE752250BD10000C0302 /* FlowBarController.swift in Sources */,
 				1BE5AE71224F9366000C0302 /* Flow.swift in Sources */,
 				1BE5AE762251AB53000C0302 /* ViewController.swift in Sources */,
 				1BE5AE73224F9522000C0302 /* FlowBar.swift in Sources */,
+				1BE312C1225C9B190050E71A /* AppDelegate.swift in Sources */,
+				1B29AC1C225B2FF1008878C2 /* FlowBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,7 +478,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -531,7 +537,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -548,7 +554,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
@@ -644,6 +650,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FlowBarExamples/Info.plist;
@@ -664,6 +671,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FlowBarExamples/Info.plist;

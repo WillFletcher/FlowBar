@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FlowBar/FlowBarController.swift"
-            timestampString = "576065760.055634"
+            filePath = "FlowBar/Flow.swift"
+            timestampString = "576497250.454468"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "configureTabs()"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "gravityUpdated(motion:error:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,139 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlowBar/Flow.swift"
-            timestampString = "576065760.055853"
+            timestampString = "576497250.4554909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "init(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FlowBar.Flow.__allocating_init(FlowBar.FlowBarController) -&gt; FlowBar.Flow"
-                  moduleName = "FlowBar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/willfletcher/Desktop/flowbar/FlowBar/FlowBar/Flow.swift"
-                  timestampString = "575999581.390835"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "14">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FlowBar.Flow.init(FlowBar.FlowBarController) -&gt; FlowBar.Flow"
-                  moduleName = "FlowBar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/willfletcher/Desktop/flowbar/FlowBar/FlowBar/Flow.swift"
-                  timestampString = "575999581.629079"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "82"
-                  endingLineNumber = "82"
-                  offsetFromSymbolStart = "35">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FlowBar/FlowBarController.swift"
-            timestampString = "576065760.0569431"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "configureTabs()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FlowBar/FlowBarController.swift"
-            timestampString = "576065760.057111"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "configureTabs()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FlowBar/FlowBarController.swift"
-            timestampString = "576065760.057291"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "viewDidAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FlowBar/FlowBarController.swift"
-            timestampString = "576065760.057422"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "viewDidAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FlowBar/FlowBarController.swift"
-            timestampString = "576065760.057628"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FlowBar/Flow.swift"
-            timestampString = "576065760.057797"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "perfromFlowAnimation()"
             landmarkType = "7">
          </BreakpointContent>
@@ -170,136 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlowBar/Flow.swift"
-            timestampString = "576065760.05884"
+            timestampString = "576497250.4558589"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "perfromFlowAnimation()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FlowBar/FlowBarController.swift"
-            timestampString = "576065760.060012"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "FlowBarController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FlowBar.FlowBarController.secondTab.getter : Swift.Optional&lt;__C.UIView&gt;"
-                  moduleName = "FlowBar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/willfletcher/Desktop/flowbar/FlowBar/FlowBar/FlowBarController.swift"
-                  timestampString = "575999581.6831191"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "114">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FlowBar.FlowBarController.secondTab.setter : Swift.Optional&lt;__C.UIView&gt;"
-                  moduleName = "FlowBar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/willfletcher/Desktop/flowbar/FlowBar/FlowBar/FlowBarController.swift"
-                  timestampString = "575999581.6858751"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "128">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FlowBar.FlowBarController.secondTab.modify : Swift.Optional&lt;__C.UIView&gt;"
-                  moduleName = "FlowBar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/willfletcher/Desktop/flowbar/FlowBar/FlowBar/FlowBarController.swift"
-                  timestampString = "575999581.689139"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "18">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FlowBar.FlowBarController.secondTab.modify : Swift.Optional&lt;__C.UIView&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "FlowBar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/willfletcher/Desktop/flowbar/FlowBar/FlowBar/FlowBarController.swift"
-                  timestampString = "575999581.6940221"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FlowBar.FlowBarController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; FlowBar.FlowBarController"
-                  moduleName = "FlowBar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/willfletcher/Desktop/flowbar/FlowBar/FlowBar/FlowBarController.swift"
-                  timestampString = "575999581.697847"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "826">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FlowBar.FlowBarController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;FlowBar.FlowBarController&gt;"
-                  moduleName = "FlowBar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/willfletcher/Desktop/flowbar/FlowBar/FlowBar/FlowBarController.swift"
-                  timestampString = "575999581.702226"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "740">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FlowBarExamples/AppDelegate.swift"
-            timestampString = "576065760.06024"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "gravityUpdated(motion:error:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
