@@ -87,8 +87,8 @@ public final class Flow: NSObject {
     var collision: UICollisionBehavior!
     var animator: UIDynamicAnimator!
     
-    var canTiltLeft = false
-    var canTiltRight = false
+    var leftTiltToggled = false
+    var rightTiltToggled = false
     
     func configureDynamics() {
         animator = UIDynamicAnimator(referenceView: flowBarController.bar)
@@ -99,9 +99,7 @@ public final class Flow: NSObject {
     
     func gravityUpdated(motion: CMDeviceMotion!, error: Error!) {
         DispatchQueue.main.async {
-            
-            var firstTabPos = self.firstTab.center.x
-            
+    
             if error != nil {
                 print("error: \(error!)")
             }
@@ -121,41 +119,41 @@ public final class Flow: NSObject {
             
             // Tilted top of the device to the right
             if grav.x > 0.49 && grav.x < 0.9 {
-                if self.canTiltRight == true || self.canTiltLeft == false {
+                if self.rightTiltToggled == true || self.leftTiltToggled == false {
                     UIView.animate(withDuration: 0.9, delay: 0, options: [.allowUserInteraction], animations: {
                         self.firstTab.center.x += 15
                         
-                        self.canTiltRight = false
-                        self.canTiltLeft = true
+                        self.rightTiltToggled = false
+                        self.leftTiltToggled = true
                     }, completion: nil)
                 }
             }
             
             if grav.x < -0.49 && grav.x > -0.9 {
                 // Tilted top of the device to the left
-                if self.canTiltRight == false || self.canTiltLeft == true {
+                if self.rightTiltToggled == false || self.leftTiltToggled == true {
                     UIView.animate(withDuration: 0.9, delay: 0, options: [.allowUserInteraction], animations: {
                         self.firstTab.center.x -= 15
                         
-                        self.canTiltLeft = false
-                        self.canTiltRight = true
+                        self.leftTiltToggled = false
+                        self.rightTiltToggled = true
                     }, completion: nil)
                 }
             }
             
             if grav.x > -0.49 && grav.x < 0.48 {
                 UIView.animate(withDuration: 0.9, delay: 0, options: [.allowUserInteraction], animations: {
-                    if self.canTiltLeft == false && self.canTiltRight == true {
+                    if self.leftTiltToggled == false && self.rightTiltToggled == true {
                         self.firstTab.center.x += 15
                         
-                        self.canTiltRight = false
-                        self.canTiltLeft = false
+                        self.rightTiltToggled = false
+                        self.leftTiltToggled = false
                   
-                    } else if self.canTiltLeft == true && self.canTiltRight == false {
+                    } else if self.leftTiltToggled == true && self.rightTiltToggled == false {
                         self.firstTab.center.x -= 15
                 
-                        self.canTiltRight = false
-                        self.canTiltLeft = false
+                        self.rightTiltToggled = false
+                        self.leftTiltToggled = false
                     }
                 }, completion: nil)
             }
