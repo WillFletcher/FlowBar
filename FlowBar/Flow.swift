@@ -20,7 +20,7 @@ public var flowStyle = ""
     var thirdTab: UIView! { get set }
     var fourthTab: UIView? { get set }
     var fifthTab: UIView? { get set }
-    var bar: UIView! {get set}
+    var bar: UIView! { get set}
 }
 
 public final class Flow: NSObject {
@@ -29,7 +29,7 @@ public final class Flow: NSObject {
     
     init(_ controller: FlowBarController) {
         self.flowBarController = controller
-        
+        print("hello")
         super.init()
     }
     
@@ -51,16 +51,57 @@ public final class Flow: NSObject {
         }
     }
     
+    private var thirdTab: UIView {
+        set {
+            self.flowBarController.secondTab = newValue
+        }
+        get {
+            return self.flowBarController.thirdTab
+        }
+    }
+    
+    private var fourthTab: UIView {
+        set {
+            self.flowBarController.secondTab = newValue
+        }
+        get {
+            return self.flowBarController.fourthTab!
+        }
+    }
+    
+    private var fifthTab: UIView {
+        set {
+            self.flowBarController.secondTab = newValue
+        }
+        get {
+            return self.flowBarController.fifthTab!
+        }
+    }
+    
     public enum FlowStyles: String {
         case rainstick = "rainstick"
+        case test = "test"
     }
     
     let gravity = UIGravityBehavior()
     var collision: UICollisionBehavior!
     var animator: UIDynamicAnimator!
     
+    var canTiltLeft = false
+    var canTiltRight = false
+    
+    func configureDynamics() {
+        animator = UIDynamicAnimator(referenceView: flowBarController.bar)
+        animator.addBehavior(gravity)
+        gravity.addItem(firstTab)
+        gravity.addItem(secondTab)
+    }
+    
     func gravityUpdated(motion: CMDeviceMotion!, error: Error!) {
         DispatchQueue.main.async {
+            
+            var firstTabPos = self.firstTab.center.x
+            
             if error != nil {
                 print("error: \(error!)")
             }
@@ -73,22 +114,61 @@ public final class Flow: NSObject {
             
             let v = CGVector(dx: p.x, dy: 0 - p.y)
             self.gravity.gravityDirection = v
+            
+            print("x: \(grav.x)")
+            print("y \(grav.y)")
+            print("z: \(grav.z)")
+            
+            // Tilted top of the device to the right
+            if grav.x > 0.49 && grav.x < 0.9 {
+                if self.canTiltRight == true || self.canTiltLeft == false {
+                    UIView.animate(withDuration: 0.9, delay: 0, options: [.allowUserInteraction], animations: {
+                        self.firstTab.center.x += 15
+                        
+                        self.canTiltRight = false
+                        self.canTiltLeft = true
+                    }, completion: nil)
+                }
+            }
+            
+            if grav.x < -0.49 && grav.x > -0.9 {
+                // Tilted top of the device to the left
+                if self.canTiltRight == false || self.canTiltLeft == true {
+                    UIView.animate(withDuration: 0.9, delay: 0, options: [.allowUserInteraction], animations: {
+                        self.firstTab.center.x -= 15
+                        
+                        self.canTiltLeft = false
+                        self.canTiltRight = true
+                    }, completion: nil)
+                }
+            }
+            
+            if grav.x > -0.49 && grav.x < 0.48 {
+                UIView.animate(withDuration: 0.9, delay: 0, options: [.allowUserInteraction], animations: {
+                    if self.canTiltLeft == false && self.canTiltRight == true {
+                        self.firstTab.center.x += 15
+                        
+                        self.canTiltRight = false
+                        self.canTiltLeft = false
+                  
+                    } else if self.canTiltLeft == true && self.canTiltRight == false {
+                        self.firstTab.center.x -= 15
+                
+                        self.canTiltRight = false
+                        self.canTiltLeft = false
+                    }
+                }, completion: nil)
+            }
         }
-    }
-    
-    func configureDynamics() {
-        animator = UIDynamicAnimator(referenceView: flowBarController.bar)
-        animator.addBehavior(gravity)
-        gravity.addItem(firstTab)
-        gravity.addItem(secondTab)
     }
     
     // MARK: Flow animations
     func perfromFlowAnimation() {
+        
         if let animation = FlowStyles(rawValue: flowStyle) {
             switch animation {
             case .rainstick:
-            
+                
                 configureDynamics()
                 
                 let itemBehavior = UIDynamicItemBehavior(items: [firstTab, secondTab])
@@ -98,9 +178,13 @@ public final class Flow: NSObject {
                 collision = UICollisionBehavior(items: [firstTab, secondTab])
                 collision.translatesReferenceBoundsIntoBoundary = true
                 animator.addBehavior(collision)
+            case .test:
+                
+                print("test")
             }
         }
     }
 }
+
 
 
