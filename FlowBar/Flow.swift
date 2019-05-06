@@ -20,7 +20,7 @@ public var flowStyle = ""
     var thirdTab: UIView! { get set }
     var fourthTab: UIView? { get set }
     var fifthTab: UIView? { get set }
-    var bar: UIView! { get set}
+    var bar: UIView! { get set }
 }
 
 public final class Flow: NSObject {
@@ -29,7 +29,7 @@ public final class Flow: NSObject {
     
     init(_ controller: FlowBarController) {
         self.flowBarController = controller
-        print("hello")
+        
         super.init()
     }
     
@@ -80,7 +80,7 @@ public final class Flow: NSObject {
     
     public enum FlowStyles: String {
         case rainstick = "rainstick"
-        case test = "test"
+        case bookshelf = "bookshelf"
     }
     
     let gravity = UIGravityBehavior()
@@ -97,9 +97,32 @@ public final class Flow: NSObject {
         gravity.addItem(secondTab)
     }
     
-    func gravityUpdated(motion: CMDeviceMotion!, error: Error!) {
+    func activateRainstick(motion: CMDeviceMotion!, error: Error!) {
         DispatchQueue.main.async {
+            
+            if error != nil {
+                print("error: \(error!)")
+            }
+            
+            let grav = motion.gravity
+            
+            let x = CGFloat(grav.x)
+            let y = CGFloat(grav.y)
+            let p = CGPoint(x: x, y: y)
+            
+            let v = CGVector(dx: p.x, dy: 0 - p.y)
+            self.gravity.gravityDirection = v
+            
+            print("x: \(grav.x)")
+            print("y \(grav.y)")
+            print("z: \(grav.z)")
+            
+        }
+    }
     
+    func activateBookShelfGravity(motion: CMDeviceMotion!, error: Error!) {
+        DispatchQueue.main.async {
+            
             if error != nil {
                 print("error: \(error!)")
             }
@@ -148,10 +171,10 @@ public final class Flow: NSObject {
                         
                         self.rightTiltToggled = false
                         self.leftTiltToggled = false
-                  
+                        
                     } else if self.leftTiltToggled == true && self.rightTiltToggled == false {
                         self.firstTab.center.x -= 15
-                
+                        
                         self.rightTiltToggled = false
                         self.leftTiltToggled = false
                     }
@@ -176,9 +199,11 @@ public final class Flow: NSObject {
                 collision = UICollisionBehavior(items: [firstTab, secondTab])
                 collision.translatesReferenceBoundsIntoBoundary = true
                 animator.addBehavior(collision)
-            case .test:
                 
-                print("test")
+                print("rainstick")
+            
+            case .bookshelf:
+                print("bookshelf")
             }
         }
     }

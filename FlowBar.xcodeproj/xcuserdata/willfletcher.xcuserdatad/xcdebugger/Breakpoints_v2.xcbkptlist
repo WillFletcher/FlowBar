@@ -10,13 +10,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlowBar/Flow.swift"
-            timestampString = "578630941.829599"
+            timestampString = "578832319.297756"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "62"
             endingLineNumber = "62"
             landmarkName = "Flow"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FlowBar.Flow.FlowStyles.init(rawValue: Swift.String) -&gt; Swift.Optional&lt;FlowBar.Flow.FlowStyles&gt;"
+                  moduleName = "FlowBar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/willfletcher/Desktop/flowbar/FlowBar/FlowBar/Flow.swift"
+                  timestampString = "578826278.635393"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FlowBar.Flow.FlowStyles.rawValue.getter : Swift.String"
+                  moduleName = "FlowBar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/willfletcher/Desktop/flowbar/FlowBar/FlowBar/Flow.swift"
+                  timestampString = "578826278.639819"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,29 +58,157 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlowBar/Flow.swift"
-            timestampString = "578630941.8297859"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "Flow"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FlowBar/Flow.swift"
-            timestampString = "578630941.8298481"
+            timestampString = "578832319.2978669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
             endingLineNumber = "64"
             landmarkName = "fourthTab"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FlowBar.Flow.FlowStyles.init(rawValue: Swift.String) -&gt; Swift.Optional&lt;FlowBar.Flow.FlowStyles&gt;"
+                  moduleName = "FlowBar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/willfletcher/Desktop/flowbar/FlowBar/FlowBar/Flow.swift"
+                  timestampString = "578826278.644855"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FlowBar.Flow.FlowStyles.rawValue.getter : Swift.String"
+                  moduleName = "FlowBar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/willfletcher/Desktop/flowbar/FlowBar/FlowBar/Flow.swift"
+                  timestampString = "578826278.6489249"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FlowBar/Flow.swift"
+            timestampString = "578832319.297937"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "FlowStyles"
+            landmarkType = "13">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FlowBar.Flow.FlowStyles.init(rawValue: Swift.String) -&gt; Swift.Optional&lt;FlowBar.Flow.FlowStyles&gt;"
+                  moduleName = "FlowBar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/willfletcher/Desktop/flowbar/FlowBar/FlowBar/Flow.swift"
+                  timestampString = "578825243.280512"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FlowBar.Flow.FlowStyles.rawValue.getter : Swift.String"
+                  moduleName = "FlowBar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/willfletcher/Desktop/flowbar/FlowBar/FlowBar/Flow.swift"
+                  timestampString = "578825243.286406"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FlowBar/Flow.swift"
+            timestampString = "578832319.297986"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "FlowStyles"
+            landmarkType = "13">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FlowBar.Flow.FlowStyles.init(rawValue: Swift.String) -&gt; Swift.Optional&lt;FlowBar.Flow.FlowStyles&gt;"
+                  moduleName = "FlowBar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/willfletcher/Desktop/flowbar/FlowBar/FlowBar/Flow.swift"
+                  timestampString = "578825243.311066"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FlowBar.Flow.FlowStyles.rawValue.getter : Swift.String"
+                  moduleName = "FlowBar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/willfletcher/Desktop/flowbar/FlowBar/FlowBar/Flow.swift"
+                  timestampString = "578825243.319733"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FlowBar/Flow.swift"
+            timestampString = "578832319.29804"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "perfromFlowAnimation()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
