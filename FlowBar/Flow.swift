@@ -13,14 +13,16 @@ import CoreMotion
 public var flowStyle = ""
 
 @objc public protocol Flowable {
+
+    // Tab bar tabs
+    var firstTab: UIView { get set }
+    var secondTab: UIView { get set }
+    var thirdTab: UIView { get set }
+    var fourthTab: UIView { get set }
+    var fifthTab: UIView { get set }
     
-    // Tabbar tabs and tabbar
-    var firstTab: UIView! { get set }
-    var secondTab: UIView! { get set }
-    var thirdTab: UIView! { get set }
-    var fourthTab: UIView? { get set }
-    var fifthTab: UIView? { get set }
-    var bar: UIView! { get set }
+    // Tab bar
+    var bar: UIView { get set }
 }
 
 public final class Flow: NSObject {
@@ -65,7 +67,7 @@ public final class Flow: NSObject {
             self.flowBarController.secondTab = newValue
         }
         get {
-            return self.flowBarController.fourthTab!
+            return self.flowBarController.fourthTab
         }
     }
     
@@ -74,7 +76,7 @@ public final class Flow: NSObject {
             self.flowBarController.secondTab = newValue
         }
         get {
-            return self.flowBarController.fifthTab!
+            return self.flowBarController.fifthTab
         }
     }
     
@@ -185,7 +187,6 @@ public final class Flow: NSObject {
     
     // MARK: Flow animations
     func perfromFlowAnimation() {
-        
         if let animation = FlowStyles(rawValue: flowStyle) {
             switch animation {
             case .rainstick:

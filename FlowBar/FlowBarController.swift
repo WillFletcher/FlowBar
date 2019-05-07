@@ -11,12 +11,12 @@ import CoreMotion
 
 public class FlowBarController: UITabBarController, Flowable {
     
-    public var firstTab: UIView?
-    public var secondTab: UIView?
-    public var thirdTab: UIView?
-    public var fourthTab: UIView?
-    public var fifthTab: UIView?
-    public var bar: UIView!
+    public var firstTab = UIView()
+    public var secondTab = UIView()
+    public var thirdTab = UIView()
+    public var fourthTab = UIView()
+    public var fifthTab = UIView()
+    public var bar = UIView()
     
     lazy public var flow: Flow = Flow(self)
     
