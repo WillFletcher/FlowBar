@@ -66,6 +66,7 @@
         <!--Three-->
         <scene sceneID="cB9-za-VgQ">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HlJ-cw-ox3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="4Nv-u6-hFd" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZhH-o6-07M">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -75,13 +76,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Three" id="ywa-9l-QuX"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HlJ-cw-ox3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2596" y="76"/>
         </scene>
         <!--Four-->
         <scene sceneID="lW1-ke-4vI">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="twU-jC-bsw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="KQd-td-jqD" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4UZ-D4-Bqc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -91,7 +92,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Four" id="l7N-VV-d7c"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="twU-jC-bsw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3497" y="76"/>
         </scene>

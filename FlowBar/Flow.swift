@@ -13,7 +13,7 @@ import CoreMotion
 public var flowStyle = ""
 
 @objc public protocol Flowable {
-
+    
     // Tab bar tabs
     var firstTab: UIView { get set }
     var secondTab: UIView { get set }
@@ -80,6 +80,15 @@ public final class Flow: NSObject {
         }
     }
     
+    private var tabBar: UIView {
+        set {
+            self.flowBarController.bar = newValue
+        }
+        get {
+            return self.flowBarController.bar
+        }
+    }
+    
     public enum FlowStyles: String {
         case rainstick = "rainstick"
         case bookshelf = "bookshelf"
@@ -97,6 +106,31 @@ public final class Flow: NSObject {
         animator.addBehavior(gravity)
         gravity.addItem(firstTab)
         gravity.addItem(secondTab)
+        gravity.addItem(thirdTab)
+        gravity.addItem(fourthTab)
+
+        switch tabBar.subviews.count {
+        case 2:
+        gravity.addItem(firstTab)
+        
+        case 3:
+        gravity.addItem(firstTab)
+        gravity.addItem(secondTab)
+       
+        case 4:
+        gravity.addItem(firstTab)
+        gravity.addItem(secondTab)
+        gravity.addItem(thirdTab)
+ 
+        case 5:
+        gravity.addItem(firstTab)
+        gravity.addItem(secondTab)
+        gravity.addItem(thirdTab)
+        gravity.addItem(fourthTab)
+        
+        default: break
+
+        }
     }
     
     func activateRainstick(motion: CMDeviceMotion!, error: Error!) {
@@ -187,22 +221,51 @@ public final class Flow: NSObject {
     
     // MARK: Flow animations
     func perfromFlowAnimation() {
+        
         if let animation = FlowStyles(rawValue: flowStyle) {
+            let itemBehavior = UIDynamicItemBehavior()
             switch animation {
             case .rainstick:
                 
                 configureDynamics()
                 
-                let itemBehavior = UIDynamicItemBehavior(items: [firstTab, secondTab])
+                switch tabBar.subviews.count {
+                case 1:
+                    print("FlowBar contains no tabs")
+                case 2:
+                    itemBehavior.addItem(firstTab)
+                    
+                    collision = UICollisionBehavior(items: [firstTab])
+                case 3:
+                    itemBehavior.addItem(firstTab)
+                    itemBehavior.addItem(secondTab)
+                    
+                    collision = UICollisionBehavior(items: [firstTab, secondTab])
+                case 4:
+                    itemBehavior.addItem(firstTab)
+                    itemBehavior.addItem(secondTab)
+                    itemBehavior.addItem(thirdTab)
+                    
+                    collision = UICollisionBehavior(items: [firstTab, secondTab, thirdTab])
+                case 5:
+                    itemBehavior.addItem(firstTab)
+                    itemBehavior.addItem(secondTab)
+                    itemBehavior.addItem(thirdTab)
+                    itemBehavior.addItem(fourthTab)
+                    
+                    collision = UICollisionBehavior(items: [firstTab, secondTab, thirdTab, fourthTab])
+                    
+                default: break
+                }
+                
                 itemBehavior.elasticity = 0.7
                 animator.addBehavior(itemBehavior)
                 
-                collision = UICollisionBehavior(items: [firstTab, secondTab])
                 collision.translatesReferenceBoundsIntoBoundary = true
                 animator.addBehavior(collision)
                 
                 print("rainstick")
-            
+                
             case .bookshelf:
                 print("bookshelf")
             }
