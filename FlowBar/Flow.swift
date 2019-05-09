@@ -108,28 +108,28 @@ public final class Flow: NSObject {
         gravity.addItem(secondTab)
         gravity.addItem(thirdTab)
         gravity.addItem(fourthTab)
-
+        
         switch tabBar.subviews.count {
         case 2:
-        gravity.addItem(firstTab)
-        
+            gravity.addItem(firstTab)
+            
         case 3:
-        gravity.addItem(firstTab)
-        gravity.addItem(secondTab)
-       
+            gravity.addItem(firstTab)
+            gravity.addItem(secondTab)
+            
         case 4:
-        gravity.addItem(firstTab)
-        gravity.addItem(secondTab)
-        gravity.addItem(thirdTab)
- 
+            gravity.addItem(firstTab)
+            gravity.addItem(secondTab)
+            gravity.addItem(thirdTab)
+            
         case 5:
-        gravity.addItem(firstTab)
-        gravity.addItem(secondTab)
-        gravity.addItem(thirdTab)
-        gravity.addItem(fourthTab)
-        
+            gravity.addItem(firstTab)
+            gravity.addItem(secondTab)
+            gravity.addItem(thirdTab)
+            gravity.addItem(fourthTab)
+            
         default: break
-
+            
         }
     }
     
@@ -180,7 +180,29 @@ public final class Flow: NSObject {
             if grav.x > 0.49 && grav.x < 0.9 {
                 if self.rightTiltToggled == true || self.leftTiltToggled == false {
                     UIView.animate(withDuration: 0.9, delay: 0, options: [.allowUserInteraction], animations: {
-                        self.firstTab.center.x += 15
+                        
+                        
+                        switch self.tabBar.subviews.count {
+                        case 2:
+                            self.firstTab.center.x += 15
+                            
+                        case 3:
+                            self.firstTab.center.x += 15
+                            self.secondTab.center.x += 15
+                        case 4:
+                            self.firstTab.center.x += 15
+                            self.secondTab.center.x += 15
+                            self.thirdTab.center.x += 15
+                            
+                        case 5:
+                            self.firstTab.center.x += 15
+                            self.secondTab.center.x += 15
+                            self.thirdTab.center.x += 15
+                            self.fourthTab.center.x += 15
+                            
+                        default: break
+                            
+                        }
                         
                         self.rightTiltToggled = false
                         self.leftTiltToggled = true
@@ -192,7 +214,28 @@ public final class Flow: NSObject {
                 // Tilted top of the device to the left
                 if self.rightTiltToggled == false || self.leftTiltToggled == true {
                     UIView.animate(withDuration: 0.9, delay: 0, options: [.allowUserInteraction], animations: {
-                        self.firstTab.center.x -= 15
+                        
+                        switch self.tabBar.subviews.count {
+                        case 2:
+                            self.firstTab.center.x -= 15
+                            
+                        case 3:
+                            self.firstTab.center.x -= 15
+                            self.secondTab.center.x -= 15
+                        case 4:
+                            self.firstTab.center.x -= 15
+                            self.secondTab.center.x -= 15
+                            self.thirdTab.center.x -= 15
+                            
+                        case 5:
+                            self.firstTab.center.x -= 15
+                            self.secondTab.center.x -= 15
+                            self.thirdTab.center.x -= 15
+                            self.fourthTab.center.x -= 15
+                            
+                        default: break
+                            
+                        }
                         
                         self.leftTiltToggled = false
                         self.rightTiltToggled = true
@@ -200,16 +243,59 @@ public final class Flow: NSObject {
                 }
             }
             
+            // When device is being tilted towards its orginal position, return tabs to original position either by adding or subtracting 15 to center.x
             if grav.x > -0.49 && grav.x < 0.48 {
                 UIView.animate(withDuration: 0.9, delay: 0, options: [.allowUserInteraction], animations: {
                     if self.leftTiltToggled == false && self.rightTiltToggled == true {
-                        self.firstTab.center.x += 15
+                        
+                        switch self.tabBar.subviews.count {
+                        case 2:
+                            self.firstTab.center.x += 15
+                            
+                        case 3:
+                            self.firstTab.center.x += 15
+                            self.secondTab.center.x += 15
+                        case 4:
+                            self.firstTab.center.x += 15
+                            self.secondTab.center.x += 15
+                            self.thirdTab.center.x += 15
+                            
+                        case 5:
+                            self.firstTab.center.x += 15
+                            self.secondTab.center.x += 15
+                            self.thirdTab.center.x += 15
+                            self.fourthTab.center.x += 15
+                            
+                        default: break
+                            
+                        }
                         
                         self.rightTiltToggled = false
                         self.leftTiltToggled = false
                         
                     } else if self.leftTiltToggled == true && self.rightTiltToggled == false {
-                        self.firstTab.center.x -= 15
+                        
+                        switch self.tabBar.subviews.count {
+                        case 2:
+                            self.firstTab.center.x -= 15
+                            
+                        case 3:
+                            self.firstTab.center.x -= 15
+                            self.secondTab.center.x -= 15
+                        case 4:
+                            self.firstTab.center.x -= 15
+                            self.secondTab.center.x -= 15
+                            self.thirdTab.center.x -= 15
+                            
+                        case 5:
+                            self.firstTab.center.x -= 15
+                            self.secondTab.center.x -= 15
+                            self.thirdTab.center.x -= 15
+                            self.fourthTab.center.x -= 15
+                            
+                        default: break
+                            
+                        }
                         
                         self.rightTiltToggled = false
                         self.leftTiltToggled = false
