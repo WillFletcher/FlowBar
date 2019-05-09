@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--First-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FlowBarExamples" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,7 +20,7 @@
                         <color key="backgroundColor" red="0.26606553789999998" green="0.53822052480000004" blue="0.97003895039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="Star" id="MBA-iA-zNw"/>
+                    <tabBarItem key="tabBarItem" title="First" image="Star" id="MBA-iA-zNw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -47,7 +47,7 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="67.633928571428569"/>
         </scene>
-        <!--Item-->
+        <!--Second-->
         <scene sceneID="Egj-tK-t3g">
             <objects>
                 <viewController id="LMu-z7-jW5" sceneMemberID="viewController">
@@ -57,13 +57,13 @@
                         <color key="backgroundColor" red="1" green="0.22613528199999999" blue="0.0015564945880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="zfi-j4-cmL"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="More Filled" id="VYu-gv-12G"/>
+                    <tabBarItem key="tabBarItem" title="Second" image="Star" id="VYu-gv-12G"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rQ-6D-n5A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1783" y="76"/>
         </scene>
-        <!--Three-->
+        <!--Third-->
         <scene sceneID="cB9-za-VgQ">
             <objects>
                 <viewController id="4Nv-u6-hFd" sceneMemberID="viewController">
@@ -73,13 +73,13 @@
                         <color key="backgroundColor" red="0.32091707435948863" green="0.71638671874999993" blue="0.34892313389627971" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="iq3-75-171"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Three" id="ywa-9l-QuX"/>
+                    <tabBarItem key="tabBarItem" title="Third" image="Star" id="ywa-9l-QuX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HlJ-cw-ox3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2596" y="76"/>
         </scene>
-        <!--Four-->
+        <!--Fourth-->
         <scene sceneID="lW1-ke-4vI">
             <objects>
                 <viewController id="KQd-td-jqD" sceneMemberID="viewController">
@@ -89,7 +89,7 @@
                         <color key="backgroundColor" red="0.55909769129091735" green="0.079455136094304005" blue="0.64126953125000008" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="WS1-iX-8oT"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Four" id="l7N-VV-d7c"/>
+                    <tabBarItem key="tabBarItem" title="Fourth" image="Star" id="l7N-VV-d7c"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="twU-jC-bsw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,7 +97,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="More Filled" width="50" height="50"/>
         <image name="Star" width="25" height="24"/>
     </resources>
 </document>

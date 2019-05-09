@@ -14,13 +14,15 @@ public var flowStyle = ""
 
 @objc public protocol Flowable {
     
-    // Tabbar tabs and tabbar
-    var firstTab: UIView! { get set }
-    var secondTab: UIView! { get set }
-    var thirdTab: UIView! { get set }
-    var fourthTab: UIView? { get set }
-    var fifthTab: UIView? { get set }
-    var bar: UIView! { get set}
+    // Tab bar tabs
+    var firstTab: UIView { get set }
+    var secondTab: UIView { get set }
+    var thirdTab: UIView { get set }
+    var fourthTab: UIView { get set }
+    var fifthTab: UIView { get set }
+    
+    // Tab bar
+    var bar: UIView { get set }
 }
 
 public final class Flow: NSObject {
@@ -29,7 +31,7 @@ public final class Flow: NSObject {
     
     init(_ controller: FlowBarController) {
         self.flowBarController = controller
-        print("hello")
+        
         super.init()
     }
     
@@ -65,7 +67,7 @@ public final class Flow: NSObject {
             self.flowBarController.secondTab = newValue
         }
         get {
-            return self.flowBarController.fourthTab!
+            return self.flowBarController.fourthTab
         }
     }
     
@@ -74,13 +76,22 @@ public final class Flow: NSObject {
             self.flowBarController.secondTab = newValue
         }
         get {
-            return self.flowBarController.fifthTab!
+            return self.flowBarController.fifthTab
+        }
+    }
+    
+    private var tabBar: UIView {
+        set {
+            self.flowBarController.bar = newValue
+        }
+        get {
+            return self.flowBarController.bar
         }
     }
     
     public enum FlowStyles: String {
         case rainstick = "rainstick"
-        case test = "test"
+        case bookshelf = "bookshelf"
     }
     
     let gravity = UIGravityBehavior()
@@ -95,11 +106,59 @@ public final class Flow: NSObject {
         animator.addBehavior(gravity)
         gravity.addItem(firstTab)
         gravity.addItem(secondTab)
+        gravity.addItem(thirdTab)
+        gravity.addItem(fourthTab)
+        
+        switch tabBar.subviews.count {
+        case 2:
+            gravity.addItem(firstTab)
+            
+        case 3:
+            gravity.addItem(firstTab)
+            gravity.addItem(secondTab)
+            
+        case 4:
+            gravity.addItem(firstTab)
+            gravity.addItem(secondTab)
+            gravity.addItem(thirdTab)
+            
+        case 5:
+            gravity.addItem(firstTab)
+            gravity.addItem(secondTab)
+            gravity.addItem(thirdTab)
+            gravity.addItem(fourthTab)
+            
+        default: break
+            
+        }
     }
     
-    func gravityUpdated(motion: CMDeviceMotion!, error: Error!) {
+    func activateRainstick(motion: CMDeviceMotion!, error: Error!) {
         DispatchQueue.main.async {
+            
+            if error != nil {
+                print("error: \(error!)")
+            }
+            
+            let grav = motion.gravity
+            
+            let x = CGFloat(grav.x)
+            let y = CGFloat(grav.y)
+            let p = CGPoint(x: x, y: y)
+            
+            let v = CGVector(dx: p.x, dy: 0 - p.y)
+            self.gravity.gravityDirection = v
+            
+            print("x: \(grav.x)")
+            print("y \(grav.y)")
+            print("z: \(grav.z)")
+            
+        }
+    }
     
+    func activateBookShelfGravity(motion: CMDeviceMotion!, error: Error!) {
+        DispatchQueue.main.async {
+            
             if error != nil {
                 print("error: \(error!)")
             }
@@ -121,7 +180,29 @@ public final class Flow: NSObject {
             if grav.x > 0.49 && grav.x < 0.9 {
                 if self.rightTiltToggled == true || self.leftTiltToggled == false {
                     UIView.animate(withDuration: 0.9, delay: 0, options: [.allowUserInteraction], animations: {
-                        self.firstTab.center.x += 15
+                        
+                        
+                        switch self.tabBar.subviews.count {
+                        case 2:
+                            self.firstTab.center.x += 15
+                            
+                        case 3:
+                            self.firstTab.center.x += 15
+                            self.secondTab.center.x += 15
+                        case 4:
+                            self.firstTab.center.x += 15
+                            self.secondTab.center.x += 15
+                            self.thirdTab.center.x += 15
+                            
+                        case 5:
+                            self.firstTab.center.x += 15
+                            self.secondTab.center.x += 15
+                            self.thirdTab.center.x += 15
+                            self.fourthTab.center.x += 15
+                            
+                        default: break
+                            
+                        }
                         
                         self.rightTiltToggled = false
                         self.leftTiltToggled = true
@@ -133,7 +214,28 @@ public final class Flow: NSObject {
                 // Tilted top of the device to the left
                 if self.rightTiltToggled == false || self.leftTiltToggled == true {
                     UIView.animate(withDuration: 0.9, delay: 0, options: [.allowUserInteraction], animations: {
-                        self.firstTab.center.x -= 15
+                        
+                        switch self.tabBar.subviews.count {
+                        case 2:
+                            self.firstTab.center.x -= 15
+                            
+                        case 3:
+                            self.firstTab.center.x -= 15
+                            self.secondTab.center.x -= 15
+                        case 4:
+                            self.firstTab.center.x -= 15
+                            self.secondTab.center.x -= 15
+                            self.thirdTab.center.x -= 15
+                            
+                        case 5:
+                            self.firstTab.center.x -= 15
+                            self.secondTab.center.x -= 15
+                            self.thirdTab.center.x -= 15
+                            self.fourthTab.center.x -= 15
+                            
+                        default: break
+                            
+                        }
                         
                         self.leftTiltToggled = false
                         self.rightTiltToggled = true
@@ -141,17 +243,60 @@ public final class Flow: NSObject {
                 }
             }
             
+            // When device is being tilted towards its orginal position, return tabs to original position either by adding or subtracting 15 to center.x
             if grav.x > -0.49 && grav.x < 0.48 {
                 UIView.animate(withDuration: 0.9, delay: 0, options: [.allowUserInteraction], animations: {
                     if self.leftTiltToggled == false && self.rightTiltToggled == true {
-                        self.firstTab.center.x += 15
+                        
+                        switch self.tabBar.subviews.count {
+                        case 2:
+                            self.firstTab.center.x += 15
+                            
+                        case 3:
+                            self.firstTab.center.x += 15
+                            self.secondTab.center.x += 15
+                        case 4:
+                            self.firstTab.center.x += 15
+                            self.secondTab.center.x += 15
+                            self.thirdTab.center.x += 15
+                            
+                        case 5:
+                            self.firstTab.center.x += 15
+                            self.secondTab.center.x += 15
+                            self.thirdTab.center.x += 15
+                            self.fourthTab.center.x += 15
+                            
+                        default: break
+                            
+                        }
                         
                         self.rightTiltToggled = false
                         self.leftTiltToggled = false
-                  
+                        
                     } else if self.leftTiltToggled == true && self.rightTiltToggled == false {
-                        self.firstTab.center.x -= 15
-                
+                        
+                        switch self.tabBar.subviews.count {
+                        case 2:
+                            self.firstTab.center.x -= 15
+                            
+                        case 3:
+                            self.firstTab.center.x -= 15
+                            self.secondTab.center.x -= 15
+                        case 4:
+                            self.firstTab.center.x -= 15
+                            self.secondTab.center.x -= 15
+                            self.thirdTab.center.x -= 15
+                            
+                        case 5:
+                            self.firstTab.center.x -= 15
+                            self.secondTab.center.x -= 15
+                            self.thirdTab.center.x -= 15
+                            self.fourthTab.center.x -= 15
+                            
+                        default: break
+                            
+                        }
+                        
                         self.rightTiltToggled = false
                         self.leftTiltToggled = false
                     }
@@ -164,21 +309,51 @@ public final class Flow: NSObject {
     func perfromFlowAnimation() {
         
         if let animation = FlowStyles(rawValue: flowStyle) {
+            let itemBehavior = UIDynamicItemBehavior()
             switch animation {
             case .rainstick:
                 
                 configureDynamics()
                 
-                let itemBehavior = UIDynamicItemBehavior(items: [firstTab, secondTab])
+                switch tabBar.subviews.count {
+                case 1:
+                    print("FlowBar contains no tabs")
+                case 2:
+                    itemBehavior.addItem(firstTab)
+                    
+                    collision = UICollisionBehavior(items: [firstTab])
+                case 3:
+                    itemBehavior.addItem(firstTab)
+                    itemBehavior.addItem(secondTab)
+                    
+                    collision = UICollisionBehavior(items: [firstTab, secondTab])
+                case 4:
+                    itemBehavior.addItem(firstTab)
+                    itemBehavior.addItem(secondTab)
+                    itemBehavior.addItem(thirdTab)
+                    
+                    collision = UICollisionBehavior(items: [firstTab, secondTab, thirdTab])
+                case 5:
+                    itemBehavior.addItem(firstTab)
+                    itemBehavior.addItem(secondTab)
+                    itemBehavior.addItem(thirdTab)
+                    itemBehavior.addItem(fourthTab)
+                    
+                    collision = UICollisionBehavior(items: [firstTab, secondTab, thirdTab, fourthTab])
+                    
+                default: break
+                }
+                
                 itemBehavior.elasticity = 0.7
                 animator.addBehavior(itemBehavior)
                 
-                collision = UICollisionBehavior(items: [firstTab, secondTab])
                 collision.translatesReferenceBoundsIntoBoundary = true
                 animator.addBehavior(collision)
-            case .test:
                 
-                print("test")
+                print("rainstick")
+                
+            case .bookshelf:
+                print("bookshelf")
             }
         }
     }
